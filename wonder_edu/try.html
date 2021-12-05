@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        #part1 {
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.7),
+                    rgba(0, 0, 0, 0.8)), url('bg.jpg');
+            background-size: 1500px;
+            height: 800px;
+            background-repeat: repeat;
+            padding: 30px;
+
+        }
+
+        ul {
+
+            display: inline;
+        }
+
+        li {
+            padding: 15px;
+            display: inline;
+            color: white;
+            display: inline;
+            font-weight: bolder;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        h1 {
+            padding: 100px;
+        }
+
+        .right {
+            float: right;
+            padding-left: 100px;
+            padding-top: 30px;
+
+        }
+
+        .right a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .right a:hover {
+            color: rgba(249, 178, 67, 255);
+            ;
+        }
+
+        /*Our color theme black and gold rgba(249,178,67,255);*/
+        #demo {
+            text-align: center;
+            font-size: 60px;
+            margin-top: 0px;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        #tag {
+            color: rgba(249, 178, 67, 255);
+            padding-left: 400px;
+            margin-bottom: 0px;
+        }
+
+        #c {
+            color: white;
+            text-align: center;
+            font-size: 50px;
+            font: 700 2.75rem/3.375rem "Montserrat", sans-serif;
+        }
+
+        #d {
+            font: 2.75rem/3.375rem "Montserrat", sans-serif;
+            color: white;
+            font-size: 25px;
+            text-align: center;
+
+        }
+
+        #b1 {
+
+            background-color: rgba(249, 178, 67, 255);
+            color: black;
+            padding: 10px 50px;
+            font-size: 20px;
+            border-radius: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+        #b2 {
+            background-color: rgb(255, 255, 255, 0);
+            font-size: 20px;
+            color: white;
+            box-shadow: none;
+            border-color: rgb(255, 255, 255);
+            padding: 10px 50px;
+            border-radius: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+        #button1 {
+            padding-left: 500px;
+
+
+        }
+
+        #b2:hover {
+            background-color: white;
+            color: black;
+            border-color: black;
+        }
+
+        #b1:hover {
+            background-color: rgba(249, 178, 67, 0);
+            color: rgba(249, 178, 67, 255);
+            border-color: rgba(249, 178, 67, 255);
+        }
+
+        #img1 {
+            padding-top: 40px;
+            border-radius: 20px;
+        }
+
+        #part2 {
+            width: 100%;
+            display: table;
+            background-color: rgba(249, 178, 67, 255);
+            height: 400px;
+
+        }
+
+        .info {
+            height: 500px;
+            width: 50%;
+            padding-top: 180px;
+            padding-left: 100px;
+            display: table-cell;
+
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .f {
+
+            display: table-cell;
+            padding: 100px;
+        }
+
+        input {
+            padding: 10px 200px;
+            padding-left: 10px;
+            margin-bottom: 10px;
+            margin-top: 20px;
+            background-color: blanchedalmond;
+            text-align: left;
+            display: block;
+            border-radius: 5px;
+            border-color: rgb(255, 175, 118);
+        }
+
+        #reg {
+            text-align: center;
+            padding-left: 10px;
+            margin-bottom: 10px;
+            margin-top: 20px;
+            background-color: rgba(249, 178, 67, 255);
+            border-color: black;
+            border-radius: 30px;
+            padding: 10px 170px;
+        }
+
+        select {
+            background-color: rgba(0, 0, 0, 0);
+            color: white;
+            border: none;
+            font-weight: bolder;
+            font-size: 16px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        option {
+            background-color: whitesmoke;
+            color: black;
+            length: 100px
+        }
+
+        #part3 {
+            background-color: rgb(255, 255, 255);
+            height: 500px;
+
+        }
+
+        #circle {
+            width: 25px;
+            height: 25px;
+            -webkit-border-radius: 25px;
+            -moz-border-radius: 25px;
+            border-radius: 25px;
+            background: rgba(249, 178, 67, 255);
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var name = document.f1.user_name.value;
+            var email = document.f1.email.value;
+            var mobile = document.f1.number.value;
+            if (name == "" && email == "" && mobile == "") {
+                alert("Fill the form");
+                return false;
+            }
+            var validateEmail = &#39;[a - z0 - 9] +@[a - z]+\.[a - z]{ 2, 3 }&#39;
+            if (!email.value.match(validateEmail)) {
+                alert("Enter a valid email id");
+                email.focus();
+                return false;
+            }
+            if (mobile.length < 10 || mobile.length > 10) {
+                alert("Enter a valid mobile number");
+                mobile.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="part1">
+        <ul type="none">
+            <li><a href="#"><img src="logo.png" alt="logo" height="100px" width="170px"></a></li>
+            <div class="right">
+                <li><a href="#part2">Register</a></li>
+                <li><a href="#part3">Details</a></li>
+                <li><select>
+                        <option value="" disabled selected hidden>Date</option>
+                        <option>opt 1</option>
+                        <option>opt 2</option>
+                    </select></li>
+                <li><a>Contact</a></li>
+                <li><a href="https://www.facebook.com/"><img src="fb.png" height="20px" width="20px" alt=""></a></li>
+                <li><a href="https://www.linkedin.com/signup"><img src="in.ico" height="20px" width="25px" alt=""></a>
+                </li>
+            </div>
+        </ul>
+
+        <div id="tag">Signup soon...</div>
+
+        <p id="demo"></p>
+
+        <script>
+            // Set the date we're counting down to
+            var countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
+
+            // Update the count down every 1 second
+            var x = setInterval(function () {
+
+                // Get today's date and time
+                var now = new Date().getTime();
+
+                // Find the distance between now and the count down date
+                var distance = countDownDate - now;
+
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Display the result in the element with id="demo"
+                document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                    + minutes + "m " + seconds + "s ";
+
+                // If the count down is finished, write some text
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("demo").innerHTML = "EXPIRED";
+                }
+            }, 1000);
+        </script>
+        </p>
+
+        <h2 id="c"> Personality Development Course</h2>
+        <p id="d">How you carry yourself in the society determines how much you are appreciated, admired and
+            respected.<br>Are you ready to create a public image for yourself and improve your skills?</p>
+        <div id="button1"><button id="b1" onclick="#part2">Register</button>
+            <button id="b2">Discover</button>
+        </div>
+        <center>
+            <img src="form1.jpg" id="img1" alt="" height="500px" width="800px">
+        </center>
+    </div>
+    <div id="part2">
+        <div style="display:table-row; height: 400px;">
+            <div class="info">
+                <h1 style="padding-bottom: 10px; padding-left: ; ">Register Using this form</h1>
+                <p style="padding-left:60px;font-size: larger; ">Are you struggling when it comes to public speaking?
+                    <br>&nbsp; &nbsp;&nbsp;Do you want your thoughts to be impressive?</p>
+                <h3 style="padding: 50px 80px; font-family: cursive;font-weight: bold;">kill the fear and be the best
+                    version of you </h3>
+
+            </div>
+            <div style="padding-bottom: 0px;" class="f">
+                <form name="f1" method="post" action="form.html" onsubmit="return validateForm()">
+                    <input type="text" name="user_name" id="" placeholder="Full Name">
+                    <input type="text" name="email" id="" placeholder="Email Address">
+                    <input type="text" name="number" id="" placeholder="Phone Number">
+                    <br><input type="checkbox" style="display:inline;" name="policy" value="1">I accept all the <a
+                        href="#">terms and conditions</a>
+                    <br>
+                    <input type="submit" id="reg" value="Register"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div style="padding: 0px; text-align: center;" id="part3">
+        <h1 style="padding: 0px;">Course details</h1>
+        <div style="display: table; width: 100%;">
+            <div style="width: 100%; display: table-row; height: 50px; ">
+                <div style="display: table-cell; width: 50%; padding-top: 40px;">
+                    <div id="circle"></div>Personal purity
+                </div>
+                <div style="display: table-cell;">Abs Fab & LOL session</div>
+            </div>
+            <div style="width: 100%; display: table-row; height: 50px; ">
+                <div style="display: table-cell; width: 50%; padding-top: 40px;">praise and admiration</div>
+                <div style="display: table-cell;">Speak Up</div>
+            </div>
+            <div style="width: 100%; display: table-row; height: 50px; ">
+                <div style="display: table-cell; width: 50%; padding-top: 40px;">Kill the fear</div>
+                <div style="display: table-cell;">Be confident</div>
+            </div>
+        </div>
+    </div>
+    <div id="part4">
+
+
+    </div>
+</body>
+
+</html>
